@@ -37,3 +37,5 @@
 - Added ICMRA deliverable links for the full case study, Power BI dashboard file, and dataset.
 - Added `projects/icmra-case-study.html` so the full ICMRA case study opens as a formatted HTML page instead of raw Markdown.
 - Added reusable project hero image styling for project detail screenshots.
+- Updated `contact.html` with the email address and LinkedIn URL extracted from `Minh Duc Trinh_Resume.docx`.
+- Removed the contact page placeholder copy and fixed the contact page title/footer encoding.
