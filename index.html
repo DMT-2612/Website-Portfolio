@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Minh Duc — BA &amp; PM Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header">
+      <div class="site-header__inner">
+        <a class="logo" href="index.html">Minh<span>Duc</span></a>
+        <button
+          class="nav-toggle"
+          type="button"
+          aria-expanded="false"
+          aria-controls="site-nav"
+        >
+          Menu
+        </button>
+        <nav class="site-nav" id="site-nav" aria-label="Primary">
+          <ul>
+            <li><a class="nav-link--active" href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="cv.html">CV</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
+        <div class="header-cta">
+          <a class="btn btn--primary btn--small" href="cv.html">Download CV</a>
+        </div>
+      </div>
+    </header>
+
+    <main id="main">
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="wrap">
+          <div>
+            <p class="hero__badge">Open to work · BA / PM</p>
+            <h1 id="hero-title">From Requirements<br />to Execution.</h1>
+            <p class="tagline">Business Analysis · Process &amp; Project Coordination</p>
+            <p>
+              I analyse business processes, translate requirements, and structure workflows into
+              practical solutions. I work closely with stakeholders and teams to align priorities,
+              support delivery, and keep projects moving with clarity.
+            </p>
+            <div class="hero__actions">
+              <a class="btn btn--primary" href="about.html">About me</a>
+              <a class="btn btn--ghost" href="projects.html">View projects</a>
+            </div>
+          </div>
+          <aside class="hero__panel" aria-labelledby="panel-heading">
+            <h2 id="panel-heading">How I work</h2>
+            <ul>
+              <li>Clarify business problems, workflows, and stakeholder expectations before jumping into solutions.</li>
+              <li>Translate discussions and workshops into structured processes, requirements, and actionable backlogs.</li>
+              <li>Align stakeholders, priorities, and delivery through clear communication and coordination.</li>
+              <li>Balance business needs, user experience, and operational feasibility in every solution.</li>
+            </ul>
+          </aside>
+        </div>
+      </section>
+
+      <section class="section section--alt">
+        <div class="wrap">
+          <h2>Next step for recruiters</h2>
+          <p>
+            Start with <a href="about.html">About</a> for skills and tools, then explore
+            <a href="projects.html">Projects</a> for case-style write-ups with deliverables. Download my
+            <a href="cv.html">CV (PDF)</a> and reach out on <a href="contact.html">Contact</a>.
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="wrap">
+        <p>© <span id="y"></span> Minh Duc · Portfolio</p>
+        <p><a href="contact.html">Email &amp; LinkedIn</a></p>
+      </div>
+    </footer>
+    <script>
+      document.getElementById("y").textContent = new Date().getFullYear();
+    </script>
+    <script src="js/main.js"></script>
+  </body>
+</html>

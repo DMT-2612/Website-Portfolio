@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>ICMRA Case Study - Minh Duc</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../css/styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header">
+      <div class="site-header__inner">
+        <a class="logo" href="../index.html">Minh<span>Duc</span></a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+          Menu
+        </button>
+        <nav class="site-nav" id="site-nav" aria-label="Primary">
+          <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../about.html">About</a></li>
+            <li><a class="nav-link--active" href="../projects.html">Projects</a></li>
+            <li><a href="../cv.html">CV</a></li>
+            <li><a href="../contact.html">Contact</a></li>
+          </ul>
+        </nav>
+        <div class="header-cta">
+          <a class="btn btn--primary btn--small" href="../cv.html">Download CV</a>
+        </div>
+      </div>
+    </header>
+
+    <main id="main">
+      <div class="wrap page-intro">
+        <p class="breadcrumb"><a href="icmra-fundraising-dashboard.html">&larr; Back to ICMRA project</a></p>
+        <h1>ICMRA Fundraising Analytics Dashboard</h1>
+        <p class="lede">Full portfolio case study.</p>
+      </div>
+
+      <article class="wrap section section--tight case-study">
+        <section>
+          <h2>1. Project Overview</h2>
+          <p>
+            The ICMRA Fundraising Analytics Dashboard is a strategic Business Intelligence project
+            developed for the International Consortium for Medical Research Advancement, a medical
+            research fundraising organisation with activity across contributors, campaigns, regions,
+            referral sources, and research areas.
+          </p>
+          <p>
+            The project used fundraising data from 2019 to 2025 to create a Power BI decision-support
+            solution for senior management. The main objective was to move beyond descriptive reporting
+            and provide actionable insight into fundraising performance, contributor value, campaign
+            efficiency, retention risk, and forward planning.
+          </p>
+          <p>
+            The final output included a strategic analytics report, Power BI dashboard, executive
+            infographic, data quality documentation, semantic model design, and advanced analytics logic.
+          </p>
+        </section>
+
+        <section>
+          <h2>2. Business Context</h2>
+          <p>
+            ICMRA's leadership needed a clearer understanding of how fundraising performance was changing
+            and where future growth should be managed. The organisation had multiple contributor types,
+            campaign structures, research areas, and referral channels, but needed one consolidated view
+            of performance and strategic risk.
+          </p>
+          <p>The core business challenge was not simply to report total donations. The real challenge was to identify:</p>
+          <ul>
+            <li>Which funding patterns were sustainable.</li>
+            <li>Which contributor groups were most valuable or at risk.</li>
+            <li>Which campaigns delivered efficient return.</li>
+            <li>Where dormant contributors represented recoverable value.</li>
+            <li>What combination of growth levers could support future revenue targets.</li>
+          </ul>
+          <p>
+            This made the project highly relevant to business analysis and data analytics because the
+            dashboard had to connect operational data with executive-level decisions.
+          </p>
+        </section>
+
+        <section>
+          <h2>3. Dataset and Preparation</h2>
+          <p>
+            The source dataset contained fundraising activity from 2019 to 2025, structured across a
+            pledge-payment fact table and supporting dimension tables for accounts, campaigns, and
+            contribution types.
+          </p>
+          <p>
+            The raw fact table contained 45,000 pledge-payment records. Data preparation was completed
+            in Power Query to ensure transparency and reproducibility. Key cleaning steps included:
+          </p>
+          <ul>
+            <li>Removing 7 exact duplicate pledge-payment records, leaving 44,993 cleaned fact rows.</li>
+            <li>Correcting 5 malformed account ID values so fact records could match the account dimension.</li>
+            <li>Removing 21 trailing blank records from the contribution lookup table.</li>
+            <li>Standardising inconsistent account categories, including <code>Househld</code> to <code>Household</code>.</li>
+            <li>Standardising <code>USA</code> to <code>United States</code>.</li>
+            <li>Imputing 92 missing payment dates using campaign-level median payment lag.</li>
+            <li>Retaining a <code>Payment Date Imputed</code> flag so imputed records remained auditable.</li>
+          </ul>
+          <p>
+            This data preparation step was important because downstream measures such as revenue, pledge
+            count, RFM frequency, campaign ROI, retention, and CLV proxy would be unreliable if duplicate
+            records, missing dates, or broken relationships remained unresolved.
+          </p>
+        </section>
+
+        <section>
+          <h2>4. Analytical Approach</h2>
+          <p>
+            The dashboard was designed around a Power BI star schema, with the pledge-payment table as
+            the central fact table and account, campaign, contribution, and date tables as dimensions.
+          </p>
+          <p>The analytical approach included several layers:</p>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Analysis Area</th>
+                  <th>Purpose</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Executive KPI monitoring</td>
+                  <td>Track total pledges, contributors, average pledge, campaign achievement, and ROI.</td>
+                </tr>
+                <tr>
+                  <td>Campaign performance</td>
+                  <td>Compare revenue, target achievement, budget pressure, and return efficiency.</td>
+                </tr>
+                <tr>
+                  <td>Contributor segmentation</td>
+                  <td>Understand value by account type, segment, region, and funding capacity.</td>
+                </tr>
+                <tr>
+                  <td>RFM analytics</td>
+                  <td>Segment contributors by recency, frequency, and monetary value.</td>
+                </tr>
+                <tr>
+                  <td>Cohort retention</td>
+                  <td>Analyse whether contributors remained active after their first observed payment period.</td>
+                </tr>
+                <tr>
+                  <td>CLV proxy</td>
+                  <td>Compare historical contributor value using observed revenue, frequency, and lifetime.</td>
+                </tr>
+                <tr>
+                  <td>Scenario planning</td>
+                  <td>Test how changes in pledge value, giving frequency, and retention could affect revenue targets.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p>
+            Some techniques were intentionally scoped. CLV was treated as a historical proxy rather than
+            a predictive lifetime value model because the dataset did not contain margin, discount rate,
+            or formal churn probability. Market basket analysis was rejected because the dataset did not
+            contain a valid basket or multi-item transaction structure.
+          </p>
+        </section>
+
+        <section>
+          <h2>5. Dashboard Structure</h2>
+          <p>The final Power BI dashboard was organised into eight pages:</p>
+          <ol>
+            <li><strong>Executive Overview:</strong> Board-level KPI summary and fundraising trend.</li>
+            <li><strong>Campaign Performance:</strong> Campaign achievement, budget, ROI, and funding drivers.</li>
+            <li><strong>Contributor Overview:</strong> Contributor composition by account type, segment, capacity, and region.</li>
+            <li><strong>RFM Analytics:</strong> Contributor value and behavioural segmentation.</li>
+            <li><strong>Cohort Analytics:</strong> Retention by cohort and activity offset.</li>
+            <li><strong>CLV Analysis:</strong> Historical contributor value and churn/inactivity indicators.</li>
+            <li><strong>Scenario Analysis:</strong> What-if revenue modelling and goal-seeking logic.</li>
+            <li><strong>Executive Infographic:</strong> One-page synthesis for senior leadership.</li>
+          </ol>
+          <p>
+            This structure separated each analytical technique into a dedicated page, reducing dashboard
+            clutter and making the business purpose of each view clearer for non-technical stakeholders.
+          </p>
+        </section>
+
+        <section>
+          <h2>6. Key Insights</h2>
+          <h3>Insight 1: Revenue Growth Was Strong but Not Stable</h3>
+          <p>
+            Annual pledge revenue increased from $1.36M in 2019 and $1.31M in 2020 to $8.50M in 2022
+            and $12.81M in 2023. However, revenue then fell by 78.3% to $2.79M in 2024 and remained
+            almost flat at $2.76M in 2025.
+          </p>
+          <p>
+            This showed that 2023 should be treated as an exceptional peak rather than a reliable planning
+            baseline. For senior management, the implication was that future targets should be rebased
+            around sustainable capacity instead of assuming peak-year performance would repeat.
+          </p>
+
+          <h3>Insight 2: Contributor Value Was Concentrated in Key Segments</h3>
+          <p>
+            RFM segmentation showed that Champions generated $6.9M, while Needs Attention and Loyal Donors
+            generated approximately $11.0M combined.
+          </p>
+          <p>
+            This indicated that ICMRA's contributor portfolio contained both high-value secure segments
+            and high-value vulnerable segments. The business issue was not only to identify top
+            contributors, but to understand which valuable contributors were drifting and required
+            intervention.
+          </p>
+
+          <h3>Insight 3: Campaign Performance Was Uneven</h3>
+          <p>
+            Campaign analysis showed a strong imbalance in campaign return. General Oncology Research
+            generated approximately $17M, while the next leading campaigns were materially lower.
+          </p>
+          <p>
+            The key management implication was that campaign performance should not be judged by revenue
+            alone. Campaigns also consume budget, staff effort, and donor attention, so ICMRA should
+            compare revenue, target achievement, and budget efficiency before scaling future campaign
+            investment.
+          </p>
+
+          <h3>Insight 4: Reactivation Was a Significant Growth Opportunity</h3>
+          <p>
+            The dashboard identified 1,353 contributors who returned after more than 365 days of inactivity.
+            These reactivated contributors generated approximately $19.03M in revenue.
+          </p>
+          <p>
+            This reframed dormant contributors as a recoverable value pool, not only a retention problem.
+            The strongest reactivation value came from segments such as Champions and Loyal Donors,
+            showing that valuable relationships could lapse and later return.
+          </p>
+
+          <h3>Insight 5: Dormant Contributors Still Represented Revenue Exposure</h3>
+          <p>
+            The analysis identified approximately $6.3M in dormant contributor value still tied to inactive
+            contributors. The largest exposure was found in At Risk, General Contributors, Lost, and Needs
+            Attention segments.
+          </p>
+          <p>
+            This converted retention risk into a measurable financial exposure. For management, the
+            dashboard made it possible to prioritise recovery activity based on revenue value, not only
+            contributor count.
+          </p>
+
+          <h3>Insight 6: Balanced Growth Levers Reduced Target Risk</h3>
+          <p>
+            The scenario model showed that a +20% revenue target would require a full +20% uplift if
+            management relied on only one driver: average pledge, giving frequency, or retention. However,
+            the same target required approximately +6.27% improvement in each driver when growth was
+            balanced across all three.
+          </p>
+          <p>
+            This supported a more realistic planning approach. Instead of depending on one large behavioural
+            shift, ICMRA could distribute growth pressure across donation value, engagement frequency, and
+            relationship retention.
+          </p>
+        </section>
+
+        <section>
+          <h2>7. Recommendations</h2>
+          <p>Based on the dashboard findings, ICMRA should manage fundraising as an integrated value-risk portfolio.</p>
+          <p>
+            First, revenue planning should be rebased around sustainable performance rather than the
+            exceptional 2023 peak. This would reduce the risk of setting unrealistic targets that are not
+            supported by repeatable contributor behaviour.
+          </p>
+          <p>
+            Second, contributor management should use segmentation as an operating framework. Champions and
+            Loyal Donors should be protected, while Needs Attention, At Risk, Lost, and dormant high-value
+            contributors should be monitored for recovery and retention action.
+          </p>
+          <p>
+            Third, campaign investment should be assessed through return efficiency. Campaigns should be
+            compared using revenue, target achievement, budget allocation, and ROI rather than gross revenue
+            alone.
+          </p>
+          <p>
+            Finally, future growth planning should use balanced scenario modelling. Management should test
+            combined improvements across average pledge, giving frequency, and retention instead of relying
+            on a single revenue lever.
+          </p>
+        </section>
+
+        <section>
+          <h2>8. Business Value</h2>
+          <p>
+            The project created business value by turning fragmented fundraising records into a structured
+            decision-support system. It helped senior management understand not only what happened, but
+            where action should be focused.
+          </p>
+          <p>Key business value included:</p>
+          <ul>
+            <li>Clearer visibility of fundraising performance and volatility.</li>
+            <li>Better prioritisation of high-value and at-risk contributors.</li>
+            <li>More disciplined campaign investment review.</li>
+            <li>Quantified dormant and reactivation revenue opportunities.</li>
+            <li>Scenario-based planning for future revenue targets.</li>
+            <li>A board-facing infographic that translated analytics into an executive narrative.</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>9. Skills Demonstrated</h2>
+          <p>This project demonstrates capabilities relevant to Business Analyst, Data Business Analyst, and BI/Data Analyst roles:</p>
+          <ul>
+            <li>Translating ambiguous business needs into analytical questions.</li>
+            <li>Designing a dashboard around stakeholder decisions.</li>
+            <li>Performing transparent data quality assessment using Power Query.</li>
+            <li>Building a semantic model to support reliable KPI reporting.</li>
+            <li>Defining metric contracts before implementation.</li>
+            <li>Applying advanced analytics techniques appropriately based on dataset structure.</li>
+            <li>Communicating insights in business language.</li>
+            <li>Producing strategic recommendations from evidence.</li>
+            <li>Balancing technical analytics with stakeholder-ready storytelling.</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>10. Reflection</h2>
+          <p>
+            The most important learning from this project was that advanced analytics should be selected
+            based on business relevance and dataset structure, not because the technique sounds impressive.
+          </p>
+          <p>
+            RFM, cohort retention, campaign ROI, CLV proxy, and scenario planning were appropriate because
+            the dataset supported the required entities, dates, amounts, and relationships. Market basket
+            analysis was rejected because the data did not contain a valid basket structure.
+          </p>
+          <p>
+            This project also reinforced the importance of metric governance. Measures such as campaign ROI,
+            churn, retention, and CLV can be technically valid but misleading if the business definition is
+            unclear. Creating metric contracts before building the dashboard helped keep the analysis aligned
+            with decision-making rather than only visual presentation.
+          </p>
+        </section>
+      </article>
+    </main>
+
+    <footer class="site-footer">
+      <div class="wrap">
+        <p>&copy; <span id="y"></span> Minh Duc &middot; Portfolio</p>
+        <p><a href="../contact.html">Email &amp; LinkedIn</a></p>
+      </div>
+    </footer>
+    <script>
+      document.getElementById("y").textContent = new Date().getFullYear();
+    </script>
+    <script src="../js/main.js"></script>
+  </body>
+</html>

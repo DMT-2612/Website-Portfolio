@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>About — Minh Duc</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header">
+      <div class="site-header__inner">
+        <a class="logo" href="index.html">Minh<span>Duc</span></a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+          Menu
+        </button>
+        <nav class="site-nav" id="site-nav" aria-label="Primary">
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a class="nav-link--active" href="about.html">About</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="cv.html">CV</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
+        <div class="header-cta">
+          <a class="btn btn--primary btn--small" href="cv.html">Download CV</a>
+        </div>
+      </div>
+    </header>
+
+    <main id="main">
+      <div class="wrap page-intro">
+        <h1>About</h1>
+        <p class="lede">
+          I am interested in how teams, processes, and systems come together to solve real business
+          problems.
+        </p>
+      </div>
+
+      <section class="section section--tight">
+        <div class="wrap">
+          <p>
+            I work across business analysis, workflow design, and project coordination to help teams
+            turn ambiguity into structured execution. My focus is on understanding business needs,
+            analysing processes, and translating requirements into practical solutions teams can
+            actually use.
+          </p>
+          <p>
+            Across different projects, I have contributed through process mapping, stakeholder
+            collaboration, workflow redesign, wireframing, and delivery coordination. I enjoy
+            creating structure within messy environments and aligning people around clear,
+            actionable outcomes.
+          </p>
+
+          <h2>Skills &amp; tools</h2>
+
+          <div class="skill-groups">
+            <div>
+              <h3>Business analysis</h3>
+              <ul>
+                <li>Requirement gathering &amp; analysis</li>
+                <li>Process mapping (AS-IS / TO-BE)</li>
+                <li>Workflow analysis &amp; redesign</li>
+                <li>User stories &amp; business documentation</li>
+              </ul>
+            </div>
+            <div>
+              <h3>Solution design</h3>
+              <ul>
+                <li>Wireframing &amp; prototyping</li>
+                <li>User flow &amp; interaction thinking</li>
+                <li>Workflow visualization</li>
+                <li>Figma &amp; collaborative iteration</li>
+              </ul>
+            </div>
+            <div>
+              <h3>Project delivery</h3>
+              <ul>
+                <li>Stakeholder communication</li>
+                <li>Project coordination &amp; planning</li>
+                <li>Backlog &amp; task management</li>
+                <li>Agile collaboration (Jira / Scrum)</li>
+              </ul>
+            </div>
+            <div>
+              <h3>Data &amp; tools</h3>
+              <ul>
+                <li>Power BI &amp; Excel</li>
+                <li>SQL &amp; Python (Pandas)</li>
+                <li>Jira, Figma &amp; Miro</li>
+                <li>Google Workspace &amp; Microsoft Office</li>
+              </ul>
+            </div>
+          </div>
+
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="wrap">
+        <p>© <span id="y"></span> Minh Duc · Portfolio</p>
+        <p><a href="contact.html">Email &amp; LinkedIn</a></p>
+      </div>
+    </footer>
+    <script>
+      document.getElementById("y").textContent = new Date().getFullYear();
+    </script>
+    <script src="js/main.js"></script>
+  </body>
+</html>

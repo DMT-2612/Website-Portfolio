@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Projects - Minh Duc</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header">
+      <div class="site-header__inner">
+        <a class="logo" href="index.html">Minh<span>Duc</span></a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+          Menu
+        </button>
+        <nav class="site-nav" id="site-nav" aria-label="Primary">
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a class="nav-link--active" href="projects.html">Projects</a></li>
+            <li><a href="cv.html">CV</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
+        <div class="header-cta">
+          <a class="btn btn--primary btn--small" href="cv.html">Download CV</a>
+        </div>
+      </div>
+    </header>
+
+    <main id="main">
+      <div class="wrap page-intro">
+        <h1>Projects</h1>
+        <p class="lede">
+          Case-style work with narratives, deliverables, and links. Replace summaries and thumbnails
+          with your real outcomes.
+        </p>
+      </div>
+
+      <section class="section section--tight">
+        <div class="wrap">
+          <div class="card-grid">
+            <article class="project-card">
+              <div class="project-card__media project-card__media--spotted">
+                <img
+                  src="assets/projects/spotted/thumbnail.png"
+                  alt="Spotted mobile prototype screens"
+                  loading="lazy"
+                />
+              </div>
+              <div class="project-card__body">
+                <p class="project-card__meta">Business analysis &middot; UX prototype</p>
+                <h3>Spotted: Phishing Recognition and Response Prototype</h3>
+                <p>
+                  Designed a Figma mobile prototype that helps students and recent graduates practise
+                  phishing recognition and safe response decisions in job-search scenarios.
+                </p>
+                <a class="btn btn--primary" href="projects/spotted-phishing-prototype.html">View project</a>
+              </div>
+            </article>
+
+            <article class="project-card">
+              <div class="project-card__media project-card__media--icmra">
+                <img
+                  src="assets/projects/icmra/thumbnail.png"
+                  alt="ICMRA Power BI fundraising analytics dashboard"
+                  loading="lazy"
+                />
+              </div>
+              <div class="project-card__body">
+                <p class="project-card__meta">Data analytics &middot; Power BI dashboard</p>
+                <h3>Fundraising Analytics Dashboard</h3>
+                <p>
+                  Built a Power BI decision-support dashboard for ICMRA to analyse fundraising
+                  performance, contributor value, campaign efficiency, retention risk, and revenue
+                  growth scenarios.
+                </p>
+                <a class="btn btn--primary" href="projects/icmra-fundraising-dashboard.html">View project</a>
+              </div>
+            </article>
+
+            <article class="project-card">
+              <div class="project-card__media" role="img" aria-label="Project accent"></div>
+              <div class="project-card__body">
+                <p class="project-card__meta">Process improvement &middot; Sprint</p>
+                <h3>Process mapping sprint</h3>
+                <p>
+                  Facilitated a two-week discovery: interviews, swimlanes, and a prioritized backlog for
+                  a student-facing service workflow.
+                </p>
+                <a class="btn btn--primary" href="projects/process-mapping-sprint.html">View project</a>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="wrap">
+        <p>&copy; <span id="y"></span> Minh Duc &middot; Portfolio</p>
+        <p><a href="contact.html">Email &amp; LinkedIn</a></p>
+      </div>
+    </footer>
+    <script>
+      document.getElementById("y").textContent = new Date().getFullYear();
+    </script>
+    <script src="js/main.js"></script>
+  </body>
+</html>
