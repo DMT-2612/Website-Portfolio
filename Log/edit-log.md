@@ -39,3 +39,6 @@
 - Added reusable project hero image styling for project detail screenshots.
 - Updated `contact.html` with the email address and LinkedIn URL extracted from `Minh Duc Trinh_Resume.docx`.
 - Removed the contact page placeholder copy and fixed the contact page title/footer encoding.
+- Removed placeholder intro text from the Projects page.
+- Removed the placeholder last-updated line from the CV page.
+- Shortened the Contact page lede by removing the BA/PM opportunities phrase.
