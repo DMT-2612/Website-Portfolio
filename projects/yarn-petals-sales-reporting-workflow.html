@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Yarn Petals: Sales Reporting Workflow Redesign - Minh Duc</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../css/styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header">
+      <div class="site-header__inner">
+        <a class="logo" href="../index.html">Minh<span>Duc</span></a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+          Menu
+        </button>
+        <nav class="site-nav" id="site-nav" aria-label="Primary">
+          <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../about.html">About</a></li>
+            <li><a class="nav-link--active" href="../projects.html">Projects</a></li>
+            <li><a href="../cv.html">CV</a></li>
+            <li><a href="../contact.html">Contact</a></li>
+          </ul>
+        </nav>
+        <div class="header-cta">
+          <a class="btn btn--primary btn--small" href="../cv.html">Download CV</a>
+        </div>
+      </div>
+    </header>
+
+    <main id="main">
+      <div class="wrap page-intro">
+        <p class="breadcrumb"><a href="../projects.html">&larr; Back to Projects</a></p>
+        <h1>Yarn Petals: Sales Reporting Workflow Redesign</h1>
+        <p class="tagline">
+          An AI-assisted BA delivery project that turned fragmented sales records into a structured
+          reporting workflow and Power BI dashboard.
+        </p>
+        <div class="detail-meta">
+          <span><strong>Role:</strong> Business Analyst</span>
+          <span><strong>Client:</strong> Ivy / Yarn Petals</span>
+          <span><strong>Tools:</strong> AI tools, Google Colab, Python, Power BI, Excel</span>
+        </div>
+      </div>
+
+      <div class="wrap section section--tight project-detail-layout">
+        <div>
+          <figure class="project-hero-image">
+            <img
+              src="../assets/projects/ivy/thumbnail.svg"
+              alt="Yarn Petals sales dashboard preview"
+            />
+          </figure>
+
+          <div class="detail-section">
+            <h2>Project overview</h2>
+            <p>
+              Yarn Petals is an e-commerce crochet flower brand that needed a cleaner way to manage and
+              review sales data across Shopify exports, manual order files, and social media orders. The
+              project redesigned the reporting workflow so the owner could move from inconsistent source
+              files to a single structured dataset and an interactive Power BI sales dashboard.
+            </p>
+            <p>
+              The work combined business analysis, requirements structuring, data workflow planning,
+              AI-assisted technical execution, dashboard validation, and handover documentation. My role
+              was to own the project direction, define the business rules, coordinate the solution flow,
+              and use AI tools to accelerate the technical build while checking the outputs against the
+              business requirements.
+            </p>
+          </div>
+
+          <div class="detail-section">
+            <h2>Business problem</h2>
+            <p>
+              The client had three years of sales activity spread across different formats. Shopify data
+              was messy, manual 2025 orders did not match the structured reporting format, and Instagram
+              and Facebook orders needed standardised order numbers and categories.
+            </p>
+            <p>
+              This created reporting risk for the ownership transition: financial totals could be
+              misread, category analysis was inconsistent, and the owner had to rely on manual cleaning
+              before making decisions.
+            </p>
+          </div>
+
+          <div class="detail-section">
+            <h2>My BA contribution</h2>
+            <ul>
+              <li>Clarified the reporting problem and translated it into business and functional requirements.</li>
+              <li>Defined the universal dataset structure needed for repeatable reporting.</li>
+              <li>Documented product, animal, colour, occasion, sales channel, and missing-value business rules.</li>
+              <li>Scoped what was included and excluded to keep the solution practical for a small business owner.</li>
+              <li>Used AI to support technical execution across Python logic, dashboard build iteration, and documentation.</li>
+              <li>Validated the final dashboard against expected totals, filters, privacy rules, and handover needs.</li>
+            </ul>
+          </div>
+
+          <div class="detail-section">
+            <h2>AI-assisted delivery approach</h2>
+            <p>
+              AI was used as a delivery accelerator for technical work, especially code exploration,
+              Power BI structure, DAX guidance, report layout iteration, troubleshooting, and documentation
+              drafting. The project was still led through BA judgement: I framed the problem, checked the
+              logic, decided what belonged in scope, and reviewed whether the outputs matched the client
+              workflow.
+            </p>
+            <p>
+              This showed an important practical skill: using AI not just to generate technical artifacts,
+              but to break a messy business problem into clear requirements, structured tasks, validation
+              checks, and a handover-ready solution.
+            </p>
+          </div>
+
+          <div class="detail-section">
+            <h2>Workflow redesign</h2>
+            <ul>
+              <li>Raw data inputs: Shopify CSV, cleaned Shopify file, manual order file, and cleaned order file.</li>
+              <li>Transformation layer: Python workflow in Google Colab for cleaning, mapping, and standardisation.</li>
+              <li>Structured output: `Universal.xlsx` as the single reporting source of truth.</li>
+              <li>Reporting layer: Power BI project using Orders, DimDate, Metrics, and a field parameter table.</li>
+              <li>Handover support: requirements document, dashboard plan, measure guide, and validation scripts.</li>
+            </ul>
+          </div>
+
+          <div class="detail-section">
+            <h2>Dashboard outcome</h2>
+            <p>
+              The final Power BI dashboard gives the owner a one-page view of sales performance with KPI
+              cards, filters, channel analysis, monthly trend, state performance, and distribution views
+              by colour, product, animal, and occasion. It supports switching between net sales and order
+              count for the main charts while keeping the KPI cards stable.
+            </p>
+            <p>
+              Key validation targets included net sales of $77,601.98 AUD, 1,132 distinct orders, and
+              744 total customers in the unfiltered dataset. Customer email data remained in the model for
+              operational use but was excluded from report visuals.
+            </p>
+          </div>
+        </div>
+
+        <aside class="detail-section deliverables detail-sidebar" id="deliverables">
+          <h2>Deliverables &amp; resources</h2>
+          <ul class="deliverable-list">
+            <li>
+              <a href="yarn-petals-case-study.html">
+                <span>Full case study</span>
+                <span class="type">View</span>
+              </a>
+            </li>
+            <li>
+              <a href="../projects/Ivy/PROJECT%20REQUIREMENT%20Doc.md">
+                <span>Project requirement document</span>
+                <span class="type">MD</span>
+              </a>
+            </li>
+            <li>
+              <a href="../projects/Ivy/POWER_BI_DASHBOARD_PLAN.md">
+                <span>Dashboard plan</span>
+                <span class="type">MD</span>
+              </a>
+            </li>
+            <li>
+              <a href="../projects/Ivy/pbip/Yarn%20Petals..pbip">
+                <span>Power BI project file</span>
+                <span class="type">PBIP</span>
+              </a>
+            </li>
+            <li>
+              <a href="../projects/Ivy/Universal.xlsx">
+                <span>Universal dataset</span>
+                <span class="type">XLSX</span>
+              </a>
+            </li>
+          </ul>
+        </aside>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <div class="wrap">
+        <p>&copy; <span id="y"></span> Minh Duc &middot; Portfolio</p>
+        <p><a href="../contact.html">Email &amp; LinkedIn</a></p>
+      </div>
+    </footer>
+    <script>
+      document.getElementById("y").textContent = new Date().getFullYear();
+    </script>
+    <script src="../js/main.js"></script>
+  </body>
+</html>

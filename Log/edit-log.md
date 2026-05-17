@@ -42,3 +42,11 @@
 - Removed placeholder intro text from the Projects page.
 - Removed the placeholder last-updated line from the CV page.
 - Shortened the Contact page lede by removing the BA/PM opportunities phrase.
+
+## 2026-05-17
+
+- Replaced the sample "Process mapping sprint" Projects card with the Yarn Petals sales reporting workflow redesign project.
+- Added `assets/projects/ivy/thumbnail.svg` as a Yarn Petals dashboard preview based on the supplied dashboard screenshot.
+- Added `projects/yarn-petals-sales-reporting-workflow.html` as the Yarn Petals detail page with BA role, AI-assisted delivery approach, workflow redesign, dashboard outcome, and deliverables sidebar.
+- Added `projects/yarn-petals-case-study.html` as the full Yarn Petals case study covering context, role, AI-assisted execution, requirements, workflow redesign, business rules, dashboard design, validation, business value, and reflection.
+- Added Ivy project thumbnail styling for the Projects card.

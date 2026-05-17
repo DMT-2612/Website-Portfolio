@@ -582,6 +582,17 @@ main {
   background: var(--warm-white);
 }
 
+.project-card__media--ivy {
+  padding: 0.75rem;
+  background: linear-gradient(135deg, #fde8ef, #f9c8d9 60%, #e8799e 120%);
+}
+
+.project-card__media--ivy img {
+  object-fit: contain;
+  border-radius: 8px;
+  background: #fff8fb;
+}
+
 .project-card__body {
   padding: 1.35rem 1.35rem 1.5rem;
   display: flex;

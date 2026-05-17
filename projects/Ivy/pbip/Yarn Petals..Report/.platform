@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "Yarn Petals."
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "d44bf7ed-dbb1-4df2-8794-69520707ba32"
+  }
+}

@@ -1,0 +1,134 @@
+table Orders
+	lineageTag: 5a7d96e1-2487-464f-8051-0f99d49d77aa
+
+	column Date
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: ead4f7e6-c052-4634-8890-4c9f8431bb45
+		summarizeBy: none
+		sourceColumn: Date
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Order Number'
+		dataType: string
+		lineageTag: d8e98b3e-fae8-4570-897b-3c4f38bcd818
+		summarizeBy: none
+		sourceColumn: Order Number
+
+		annotation SummarizationSetBy = Automatic
+
+	column Name
+		dataType: string
+		lineageTag: 194eb4d0-80ed-4ab6-b1d8-c804f3d0566f
+		summarizeBy: none
+		sourceColumn: Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Sale Channels'
+		dataType: string
+		lineageTag: 061e5fa2-b02a-49c4-aeec-745fa4180f3c
+		summarizeBy: none
+		sourceColumn: Sale Channels
+
+		annotation SummarizationSetBy = Automatic
+
+	column Product
+		dataType: string
+		lineageTag: b025480b-5a96-4837-8071-2033b6b3b122
+		summarizeBy: none
+		sourceColumn: Product
+
+		annotation SummarizationSetBy = Automatic
+
+	column Animals
+		dataType: string
+		lineageTag: 0ace1f0a-f242-4ded-9646-0dc36c2c90f8
+		summarizeBy: none
+		sourceColumn: Animals
+
+		annotation SummarizationSetBy = Automatic
+
+	column Colour
+		dataType: string
+		lineageTag: a3df409e-3b1f-41bf-99db-a98296168bcb
+		summarizeBy: none
+		sourceColumn: Colour
+
+		annotation SummarizationSetBy = Automatic
+
+	column Occasions
+		dataType: string
+		lineageTag: c41d57b9-cd70-4e1b-8ef3-d70a769c9063
+		summarizeBy: none
+		sourceColumn: Occasions
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Shipping Method'
+		dataType: string
+		lineageTag: bba79e2f-f103-46f2-ae1e-5a4549e3afc4
+		summarizeBy: none
+		sourceColumn: Shipping Method
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Shipping Fee'
+		dataType: int64
+		formatString: 0
+		lineageTag: 9ecbe217-3b18-4a39-82be-867a97fc290a
+		summarizeBy: sum
+		sourceColumn: Shipping Fee
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Product Price'
+		dataType: double
+		lineageTag: a43e6772-2089-4966-a470-592dc0a511f5
+		summarizeBy: sum
+		sourceColumn: Product Price
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Total
+		dataType: double
+		lineageTag: c737769a-ed40-49fa-a476-2dd6f17037c6
+		summarizeBy: sum
+		sourceColumn: Total
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column State
+		dataType: string
+		lineageTag: aaf2c2be-15a7-4972-a376-45c41eb42008
+		summarizeBy: none
+		sourceColumn: State
+
+		annotation SummarizationSetBy = Automatic
+
+	column Email
+		dataType: string
+		lineageTag: 734a00cb-a73f-45c1-bdb0-fe2aff4ad560
+		summarizeBy: none
+		sourceColumn: Email
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Orders = m
+		mode: import
+		source =
+				let
+				    Source = Excel.Workbook(File.Contents("C:\Users\trinh\OneDrive\Desktop\JOB\Ivy\Universal.xlsx"), null, true),
+				    Orders_Sheet = Source{[Item="Orders",Kind="Sheet"]}[Data],
+				    #"Promoted Headers" = Table.PromoteHeaders(Orders_Sheet, [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"Date", type datetime}, {"Order Number", type text}, {"Name", type text}, {"Sale Channels", type text}, {"Product", type text}, {"Animals", type text}, {"Colour", type text}, {"Occasions", type text}, {"Shipping Method", type text}, {"Shipping Fee", Int64.Type}, {"Product Price", type number}, {"Total", type number}, {"State", type text}, {"Email", type text}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_ResultType = Table
+

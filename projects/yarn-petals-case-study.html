@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Yarn Petals Case Study - Minh Duc</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../css/styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header">
+      <div class="site-header__inner">
+        <a class="logo" href="../index.html">Minh<span>Duc</span></a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+          Menu
+        </button>
+        <nav class="site-nav" id="site-nav" aria-label="Primary">
+          <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../about.html">About</a></li>
+            <li><a class="nav-link--active" href="../projects.html">Projects</a></li>
+            <li><a href="../cv.html">CV</a></li>
+            <li><a href="../contact.html">Contact</a></li>
+          </ul>
+        </nav>
+        <div class="header-cta">
+          <a class="btn btn--primary btn--small" href="../cv.html">Download CV</a>
+        </div>
+      </div>
+    </header>
+
+    <main id="main">
+      <div class="wrap page-intro">
+        <p class="breadcrumb"><a href="yarn-petals-sales-reporting-workflow.html">&larr; Back to Yarn Petals project</a></p>
+        <h1>Yarn Petals: Sales Reporting Workflow Redesign</h1>
+        <p class="lede">Full portfolio case study.</p>
+      </div>
+
+      <article class="wrap section section--tight case-study">
+        <section>
+          <h2>1. Project Overview</h2>
+          <p>
+            Yarn Petals is an e-commerce crochet flower brand that needed a more reliable way to manage
+            sales reporting during an ownership transition. Sales data existed across Shopify exports,
+            manual Excel files, and social media order records, but the files did not follow one consistent
+            structure.
+          </p>
+          <p>
+            The project delivered a redesigned reporting workflow: raw sales files were mapped into a
+            universal dataset, and that dataset was used as the source for a one-page Power BI sales
+            dashboard. The dashboard provided the owner with a clearer view of revenue, order count,
+            customer count, sales channels, trends, product mix, animal designs, colours, occasions, and
+            state-level demand.
+          </p>
+          <p>
+            The project was also an AI-assisted delivery case study. I owned the project direction,
+            business rules, requirements, validation, and handover logic, while using AI tools to support
+            technical execution such as Python logic, DAX guidance, dashboard iteration, and documentation.
+          </p>
+        </section>
+
+        <section>
+          <h2>2. Business Context</h2>
+          <p>
+            Yarn Petals had been operating for three years and tracking sales through multiple data
+            sources. Shopify exports were messy, the 2025 manual order file did not match the previous
+            structured dataset, and Instagram and Facebook orders lacked consistent order numbers.
+          </p>
+          <p>The business risk was practical:</p>
+          <ul>
+            <li>Sales performance could be reported incorrectly.</li>
+            <li>Manual cleaning created delay and human error.</li>
+            <li>Category analysis was difficult because product, animal, colour, and occasion values were inconsistent.</li>
+            <li>The new owner needed a process that could be repeated after handover.</li>
+          </ul>
+          <p>
+            The core challenge was not only to create a dashboard. The business needed a simple reporting
+            workflow that connected raw sales records, transformation rules, a structured dataset, and an
+            owner-friendly visual reporting layer.
+          </p>
+        </section>
+
+        <section>
+          <h2>3. My Role</h2>
+          <p>
+            My role was Business Analyst across the full project. I managed the problem framing,
+            requirements, business rules, solution structure, dashboard planning, validation checks, and
+            handover documentation.
+          </p>
+          <p>Key responsibilities included:</p>
+          <ul>
+            <li>Understanding the reporting problem from the owner's perspective.</li>
+            <li>Defining what the universal dataset needed to contain.</li>
+            <li>Documenting functional and non-functional requirements.</li>
+            <li>Clarifying scope boundaries, including what would not be automated.</li>
+            <li>Converting product and order logic into explicit business rules.</li>
+            <li>Using AI tools to accelerate technical build tasks while validating the business output.</li>
+            <li>Checking the final report against expected totals and privacy rules.</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>4. AI-Assisted Execution Model</h2>
+          <p>
+            AI was used heavily for technical acceleration, especially for code, dashboard structure,
+            troubleshooting, and documentation support. This was not treated as a replacement for business
+            analysis. Instead, AI was used as an execution partner after the business problem, rules, and
+            validation criteria were clarified.
+          </p>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Area</th>
+                  <th>How AI Supported the Work</th>
+                  <th>How I Controlled Quality</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Python / data transformation</td>
+                  <td>Helped explore cleaning logic, mapping steps, and reusable ETL structure.</td>
+                  <td>Checked outputs against the required schema, business rules, and dashboard needs.</td>
+                </tr>
+                <tr>
+                  <td>Power BI / DAX</td>
+                  <td>Supported measure logic, field parameter design, and troubleshooting patterns.</td>
+                  <td>Validated the final measures against expected totals and report behaviour.</td>
+                </tr>
+                <tr>
+                  <td>Dashboard visual design</td>
+                  <td>Helped iterate report layout, visual inventory, and theme consistency.</td>
+                  <td>Kept the report focused on owner decisions rather than adding unnecessary visuals.</td>
+                </tr>
+                <tr>
+                  <td>Documentation</td>
+                  <td>Helped draft technical guides, dashboard plans, and build notes.</td>
+                  <td>Reviewed content so it matched the actual project files and handover process.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p>
+            This demonstrated a practical AI capability: turning AI output into business-ready delivery by
+            giving it a clear brief, checking the result, and keeping the final solution aligned with
+            stakeholder needs.
+          </p>
+        </section>
+
+        <section>
+          <h2>5. Requirements and Scope</h2>
+          <p>The project objectives were to:</p>
+          <ul>
+            <li>Create a universal structured dataset format.</li>
+            <li>Develop a Python-supported process to clean and map Shopify exports.</li>
+            <li>Standardise manual and social media orders.</li>
+            <li>Build an interactive Power BI dashboard.</li>
+            <li>Make the solution transferable and scalable for the new owner.</li>
+          </ul>
+          <p>
+            The solution was intentionally scoped for a small business handover. It did not include Shopify
+            system restructuring, ERP integration, real-time API integration, Instagram or Facebook order
+            capture automation, or accounting reconciliation.
+          </p>
+          <p>
+            Non-functional requirements focused on usability, maintainability, reliability, scalability,
+            compatibility with Power BI, and protecting customer email data from public reporting views.
+          </p>
+        </section>
+
+        <section>
+          <h2>6. Workflow Redesign</h2>
+          <p>The redesigned workflow followed four layers:</p>
+          <ol>
+            <li><strong>Data input:</strong> Shopify CSV, manual Excel orders, and social media order records.</li>
+            <li><strong>Transformation:</strong> Python workflow in Google Colab to clean, map, standardise, and generate missing order numbers.</li>
+            <li><strong>Single source of truth:</strong> `Universal.xlsx`, sheet `Orders`, used as the reporting dataset.</li>
+            <li><strong>Reporting layer:</strong> Power BI dashboard using Orders, DimDate, Metrics, and Parameter tables.</li>
+          </ol>
+          <p>
+            This workflow reduced the dependency on manual spreadsheet fixes and gave the owner a clearer
+            path for refreshing the dashboard when new sales files became available.
+          </p>
+        </section>
+
+        <section>
+          <h2>7. Business Rules</h2>
+          <p>
+            A major part of the project was converting messy category logic into explicit rules. These
+            rules made the transformation process more consistent and easier to maintain after handover.
+          </p>
+          <ul>
+            <li>Blank product, animal, or colour values were standardised to `NG`.</li>
+            <li>Special customised bundles and selected high-price products were mapped into `Largest Bundle`.</li>
+            <li>Bud Bundle style variants were standardised into one `Bud Bundle` category.</li>
+            <li>Selected product names drove animal classification, such as Hana Katsu, Tonkatsu, Chickenkatsu, and Ebi Katsu.</li>
+            <li>Accessories such as graduation or birthday hats drove occasion classification.</li>
+            <li>Selected product families were mapped to couple-related occasion logic when no occasion was provided.</li>
+          </ul>
+          <p>
+            These rules were important because the dashboard would only be useful if categories were
+            stable enough for filtering, distribution analysis, and trend review.
+          </p>
+        </section>
+
+        <section>
+          <h2>8. Dashboard Design</h2>
+          <p>
+            The final Power BI report was designed as a one-page executive sales dashboard. It used a
+            Yarn Petals pink theme and focused on the information the owner would need most often.
+          </p>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Dashboard Area</th>
+                  <th>Purpose</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>KPI cards</td>
+                  <td>Show net sales, orders count, and total customers.</td>
+                </tr>
+                <tr>
+                  <td>Slicers</td>
+                  <td>Filter by product, animal, colour, date, occasion, and state.</td>
+                </tr>
+                <tr>
+                  <td>Parameter switch</td>
+                  <td>Allow charts to switch between net sales and orders count.</td>
+                </tr>
+                <tr>
+                  <td>Trend chart</td>
+                  <td>Show monthly sales or order movement over time.</td>
+                </tr>
+                <tr>
+                  <td>Channel and state visuals</td>
+                  <td>Compare where orders came from and where demand was located.</td>
+                </tr>
+                <tr>
+                  <td>Distribution donuts</td>
+                  <td>Break down colour, product, animal, and occasion mix.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <section>
+          <h2>9. Validation and UAT</h2>
+          <p>
+            The dashboard was checked against known totals from the final dataset. The unfiltered
+            validation baseline was:
+          </p>
+          <ul>
+            <li>Net Sales: $77,601.98 AUD.</li>
+            <li>Orders Count: 1,132 distinct orders.</li>
+            <li>Total Customers: 744 distinct customer names.</li>
+            <li>Date range: 2023-06-01 to 2026-01-27.</li>
+          </ul>
+          <p>
+            Additional checks covered slicer behaviour, chart switching through the parameter control,
+            Year-Month trend sorting, no prior-year or YoY logic in the final scope, and customer email
+            exclusion from all report visuals.
+          </p>
+        </section>
+
+        <section>
+          <h2>10. Business Value</h2>
+          <p>The project created value by turning fragmented order records into a repeatable reporting system.</p>
+          <ul>
+            <li>Reduced manual cleaning effort and reporting inconsistency.</li>
+            <li>Improved confidence in revenue, order, and customer reporting.</li>
+            <li>Created a structured handover asset for the new owner.</li>
+            <li>Made sales performance easier to analyse by channel, product, colour, animal, occasion, and state.</li>
+            <li>Provided documentation that explains the requirements, dashboard structure, measures, and validation approach.</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>11. Skills Demonstrated</h2>
+          <p>This project demonstrates capabilities relevant to BA, digital BA, and analytics delivery roles:</p>
+          <ul>
+            <li>Business problem framing and scope control.</li>
+            <li>Requirement documentation and functional requirement writing.</li>
+            <li>Business rule analysis and category standardisation.</li>
+            <li>Data workflow design from raw inputs to reporting output.</li>
+            <li>Dashboard planning around stakeholder decisions.</li>
+            <li>AI-assisted technical delivery and output validation.</li>
+            <li>Handover documentation for maintainability and future updates.</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>12. Reflection</h2>
+          <p>
+            The key learning from this project was that AI can speed up technical delivery, but it still
+            needs strong business direction. The most important work was not simply generating code or
+            visuals. It was deciding what the business needed, what rules had to be followed, what should
+            be excluded from scope, and how to verify that the final output was reliable.
+          </p>
+          <p>
+            For a small business reporting project, a practical solution is more valuable than a complex
+            one. The final workflow focused on a simple data refresh path, clear category rules, a stable
+            Power BI model, and a dashboard that supported owner-level decisions.
+          </p>
+        </section>
+      </article>
+    </main>
+
+    <footer class="site-footer">
+      <div class="wrap">
+        <p>&copy; <span id="y"></span> Minh Duc &middot; Portfolio</p>
+        <p><a href="../contact.html">Email &amp; LinkedIn</a></p>
+      </div>
+    </footer>
+    <script>
+      document.getElementById("y").textContent = new Date().getFullYear();
+    </script>
+    <script src="../js/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "Yarn Petals."
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "908256b9-4a3c-4518-b749-b3f88a88453b"
+  }
+}

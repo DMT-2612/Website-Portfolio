@@ -1,0 +1,4 @@
+relationship 187c6e10-8068-b56b-eb34-2d654e351590
+	fromColumn: Orders.Date
+	toColumn: DimDate.Date
+

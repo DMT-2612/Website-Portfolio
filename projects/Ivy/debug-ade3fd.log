@@ -1,0 +1,2 @@
+﻿{"sessionId":"ade3fd","runId":"post-fix","hypothesisId":"H-DATEADD","location":"dax_query Desktop","message":"DATEADD blank with Year=2026 filter","data":{"CY":238,"PY_DATEADD":null,"PY_PREVIOUSYEAR":14649.79},"timestamp":1778857922305}
+{"sessionId":"ade3fd","runId":"post-fix","hypothesisId":"H-FIX","location":"dax_query Desktop","message":"After PREVIOUSYEAR on PY measures","data":{"CY":238,"PY":14649.79,"YoY":-0.9838,"GrowthKPI":"-98.4% ▼ vs 2025"},"timestamp":1778858046429}
