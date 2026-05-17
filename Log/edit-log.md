@@ -50,3 +50,4 @@
 - Added `projects/yarn-petals-sales-reporting-workflow.html` as the Yarn Petals detail page with BA role, AI-assisted delivery approach, workflow redesign, dashboard outcome, and deliverables sidebar.
 - Added `projects/yarn-petals-case-study.html` as the full Yarn Petals case study covering context, role, AI-assisted execution, requirements, workflow redesign, business rules, dashboard design, validation, business value, and reflection.
 - Added Ivy project thumbnail styling for the Projects card.
+- Updated the Ivy project card thumbnail frame to use the same default project-card background as the other projects.
