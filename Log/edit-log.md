@@ -54,3 +54,4 @@
 - Added formatted HTML pages for the Yarn Petals project requirement document and dashboard plan, and changed the detail-page deliverable links so Markdown resources open as readable site pages.
 - Added the Google Colab Python cleaning code link to the Yarn Petals deliverables sidebar.
 - Changed the Yarn Petals Power BI deliverable link from the PBIP project file to `projects/Ivy/Yarn Petals..pbix`.
+- Replaced the generated Ivy SVG thumbnail reference with the supplied dashboard screenshot copied to `assets/projects/ivy/thumbnail.png`.
