@@ -51,3 +51,6 @@
 - Added `projects/yarn-petals-case-study.html` as the full Yarn Petals case study covering context, role, AI-assisted execution, requirements, workflow redesign, business rules, dashboard design, validation, business value, and reflection.
 - Added Ivy project thumbnail styling for the Projects card.
 - Updated the Ivy project card thumbnail frame to use the same default project-card background as the other projects.
+- Added formatted HTML pages for the Yarn Petals project requirement document and dashboard plan, and changed the detail-page deliverable links so Markdown resources open as readable site pages.
+- Added the Google Colab Python cleaning code link to the Yarn Petals deliverables sidebar.
+- Changed the Yarn Petals Power BI deliverable link from the PBIP project file to `projects/Ivy/Yarn Petals..pbix`.

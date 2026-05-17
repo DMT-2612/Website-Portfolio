@@ -1,0 +1,48 @@
+table Parameter
+	lineageTag: dc18f6c8-a4bd-4e95-a29d-4a5069dab110
+
+	column Parameter
+		lineageTag: f3f756ee-5904-4b87-aa98-a8f694005c4b
+		summarizeBy: none
+		sourceColumn: [Value1]
+		sortByColumn: 'Parameter Order'
+
+		relatedColumnDetails
+			groupByColumn: 'Parameter Fields'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Parameter Fields'
+		isHidden
+		lineageTag: f28b0b15-8607-47b1-b410-83041797e194
+		summarizeBy: none
+		sourceColumn: [Value2]
+		sortByColumn: 'Parameter Order'
+
+		extendedProperty ParameterMetadata =
+				{
+				  "version": 3,
+				  "kind": 2
+				}
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Parameter Order'
+		isHidden
+		formatString: 0
+		lineageTag: 24a3a49e-b9a8-4325-b5a4-31f2288c8fee
+		summarizeBy: sum
+		sourceColumn: [Value3]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Parameter = calculated
+		mode: import
+		source =
+				{
+				    ("Net Sales", NAMEOF('Metrics'[Net Sales]), 0),
+				    ("Orders Count", NAMEOF('Metrics'[Orders Count]), 1)
+				}
+
+	annotation PBI_Id = 2c41706443584f2eaf9d4650ca1f615d
+

@@ -1,0 +1,82 @@
+table Metrics
+	lineageTag: aed35fc3-dbe1-4169-b622-e59832abba03
+
+	measure 'Net Sales' = SUM ( Orders[Total] )
+		formatString: \$#,0
+		displayFolder: Performance Metrics
+		lineageTag: m001-net-sales
+
+	measure 'Orders Count' = DISTINCTCOUNT ( Orders[Order Number] )
+		formatString: #,0
+		displayFolder: Performance Metrics
+		lineageTag: m002-orders-count
+
+	measure 'Total Customers' = DISTINCTCOUNT ( Orders[Name] )
+		formatString: #,0
+		displayFolder: Performance Metrics
+		lineageTag: m003-total-customers
+
+	measure 'Selected Metric Value' =
+			SWITCH (
+			    SELECTEDVALUE ( Parameter[Parameter Order] ),
+			    0, [Net Sales],
+			    1, [Orders Count],
+			    [Orders Count]
+			)
+		displayFolder: Dynamic
+		lineageTag: m013-selected-metric-value
+
+	measure 'Selected Metric Label' =
+			SWITCH (
+			    SELECTEDVALUE ( Parameter[Parameter Order] ),
+			    0, "Net Sales",
+			    1, "Orders Count",
+			    "Net Sales"
+			)
+		displayFolder: Title
+		lineageTag: m015-selected-metric-label
+
+	measure 'Chart Title Trend' = [Selected Metric Label] & " Trend"
+		displayFolder: Title
+		lineageTag: m016-chart-title-trend
+
+	measure 'Chart Title Channel' = [Selected Metric Label] & " by Sales Channel"
+		displayFolder: Title
+		lineageTag: m017-chart-title-channel
+
+	measure 'Chart Title State' = [Selected Metric Label] & " by State"
+		displayFolder: Title
+		lineageTag: m018-chart-title-state
+
+	measure 'Chart Title Colour' = [Selected Metric Label] & " by Colour"
+		displayFolder: Title
+		lineageTag: m019-chart-title-colour
+
+	measure 'Chart Title Product' = [Selected Metric Label] & " by Product"
+		displayFolder: Title
+		lineageTag: m020-chart-title-product
+
+	measure 'Chart Title Animal' = [Selected Metric Label] & " by Animal"
+		displayFolder: Title
+		lineageTag: m021-chart-title-animal
+
+	measure 'Chart Title Occasion' = [Selected Metric Label] & " by Occasion"
+		displayFolder: Title
+		lineageTag: m022-chart-title-occasion
+
+	column Value
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: metrics-value-col
+		summarizeBy: sum
+		sourceColumn: [Value]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Metrics = calculated
+		mode: import
+		source = { 1 }
+
+	annotation PBI_Id = Metrics
+

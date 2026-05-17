@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Yarn Petals Dashboard Plan - Minh Duc</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../css/styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header">
+      <div class="site-header__inner">
+        <a class="logo" href="../index.html">Minh<span>Duc</span></a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+          Menu
+        </button>
+        <nav class="site-nav" id="site-nav" aria-label="Primary">
+          <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../about.html">About</a></li>
+            <li><a class="nav-link--active" href="../projects.html">Projects</a></li>
+            <li><a href="../cv.html">CV</a></li>
+            <li><a href="../contact.html">Contact</a></li>
+          </ul>
+        </nav>
+        <div class="header-cta">
+          <a class="btn btn--primary btn--small" href="../cv.html">Download CV</a>
+        </div>
+      </div>
+    </header>
+
+    <main id="main">
+      <div class="wrap page-intro">
+        <p class="breadcrumb"><a href="yarn-petals-sales-reporting-workflow.html">&larr; Back to Yarn Petals project</a></p>
+        <h1>Yarn Petals Dashboard Plan</h1>
+        <p class="lede">As-built Power BI dashboard structure, model design, layout, and validation baseline.</p>
+      </div>
+
+      <article class="wrap section section--tight case-study">
+        <section>
+          <h2>1. Dashboard Purpose</h2>
+          <p>
+            The dashboard was designed as a one-page executive sales report for Ivy / Yarn Petals. Its
+            purpose is to help the owner review sales performance, order volume, customer count, sales
+            channel mix, product mix, and category performance from one structured dataset.
+          </p>
+        </section>
+
+        <section>
+          <h2>2. Scope</h2>
+          <h3>In Scope</h3>
+          <ul>
+            <li>Load `Universal.xlsx` sheet `Orders` into Power BI.</li>
+            <li>Use a simplified model with Orders, DimDate, Metrics, and Parameter tables.</li>
+            <li>Create three fixed KPI measures: Net Sales, Orders Count, and Total Customers.</li>
+            <li>Use a field parameter to switch charts between Net Sales and Orders Count.</li>
+            <li>Build one report page with 16 visuals and Yarn Petals branding.</li>
+            <li>Keep Email in the model but exclude it from all report visuals.</li>
+          </ul>
+          <h3>Out of Scope</h3>
+          <ul>
+            <li>Prior-year, YoY, MoM, QTD, or MTD time intelligence.</li>
+            <li>Separate dimension tables for product, animal, colour, occasion, channel, or state.</li>
+            <li>Power BI Service / Fabric publishing.</li>
+            <li>Row-level security.</li>
+            <li>Real-time Shopify API integration.</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>3. Validation Baseline</h2>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Check</th>
+                  <th>Expected Value</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td>Row count</td><td>1,132 orders</td></tr>
+                <tr><td>Net Sales</td><td>$77,601.98 AUD</td></tr>
+                <tr><td>Orders Count</td><td>1,132 distinct order numbers</td></tr>
+                <tr><td>Total Customers</td><td>744 distinct customer names</td></tr>
+                <tr><td>Date range</td><td>2023-06-01 to 2026-01-27</td></tr>
+                <tr><td>Email</td><td>Present in model, not visible on report visuals</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <section>
+          <h2>4. Data Model</h2>
+          <p>The Power BI model uses a simple reporting structure:</p>
+          <ul>
+            <li>`Orders`: source table from the universal dataset.</li>
+            <li>`DimDate`: date table for slicer and Year-Month trend axis.</li>
+            <li>`Metrics`: central table for DAX measures.</li>
+            <li>`Parameter`: field parameter for Net Sales vs Orders Count chart switching.</li>
+          </ul>
+          <p>
+            `DimDate[Date]` connects to `Orders[Date]` using a single-direction one-to-many relationship.
+            Business rules are applied upstream before the data reaches Power BI.
+          </p>
+        </section>
+
+        <section>
+          <h2>5. Measures</h2>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Measure Area</th>
+                  <th>Measures</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td>Core KPIs</td><td>Net Sales, Orders Count, Total Customers.</td></tr>
+                <tr><td>Dynamic chart value</td><td>Selected Metric Value.</td></tr>
+                <tr><td>Dynamic labels</td><td>Selected Metric Label and chart title measures.</td></tr>
+                <tr><td>Total measure count</td><td>12 measures.</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p>
+            KPI cards stay fixed. The field parameter only changes chart values, so users can compare
+            sales value and order volume without changing the core KPI section.
+          </p>
+        </section>
+
+        <section>
+          <h2>6. Report Layout</h2>
+          <p>The report uses a 1280 x 720 canvas and is structured into clear dashboard zones.</p>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Zone</th>
+                  <th>Content</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td>Header</td><td>Dashboard title and Net Sales / Orders Count parameter slicer.</td></tr>
+                <tr><td>Slicer row</td><td>Product, Animal, Colour, Date, Occasion, and State filters.</td></tr>
+                <tr><td>KPI cards</td><td>Net Sales, Orders Count, and Total Customers.</td></tr>
+                <tr><td>Middle section</td><td>Sales channel donut and monthly trend column chart.</td></tr>
+                <tr><td>Right section</td><td>Orders or sales by state.</td></tr>
+                <tr><td>Distribution row</td><td>Colour, product, animal, and occasion breakdowns.</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <section>
+          <h2>7. Visual Inventory</h2>
+          <ul>
+            <li>One title text box.</li>
+            <li>One parameter slicer.</li>
+            <li>Six report slicers.</li>
+            <li>One KPI multi-card.</li>
+            <li>One sales channel donut.</li>
+            <li>One monthly trend column chart.</li>
+            <li>One state bar chart.</li>
+            <li>Four distribution donuts for colour, product, animal, and occasion.</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>8. Definition of Done</h2>
+          <ul>
+            <li>Unfiltered KPI totals match the validation baseline.</li>
+            <li>Six filters and the parameter slicer work as expected.</li>
+            <li>Parameter changes donut, channel, state, and trend charts only.</li>
+            <li>Trend uses Year-Month only.</li>
+            <li>KPI cards do not show prior-year or YoY reference labels.</li>
+            <li>Distribution donuts are configured as percent of grand total.</li>
+            <li>Email is not visible on any report visual.</li>
+            <li>Yarn Petals theme is applied consistently.</li>
+          </ul>
+        </section>
+      </article>
+    </main>
+
+    <footer class="site-footer">
+      <div class="wrap">
+        <p>&copy; <span id="y"></span> Minh Duc &middot; Portfolio</p>
+        <p><a href="../contact.html">Email &amp; LinkedIn</a></p>
+      </div>
+    </footer>
+    <script>
+      document.getElementById("y").textContent = new Date().getFullYear();
+    </script>
+    <script src="../js/main.js"></script>
+  </body>
+</html>

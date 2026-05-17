@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Yarn Petals Requirements - Minh Duc</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../css/styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header">
+      <div class="site-header__inner">
+        <a class="logo" href="../index.html">Minh<span>Duc</span></a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+          Menu
+        </button>
+        <nav class="site-nav" id="site-nav" aria-label="Primary">
+          <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../about.html">About</a></li>
+            <li><a class="nav-link--active" href="../projects.html">Projects</a></li>
+            <li><a href="../cv.html">CV</a></li>
+            <li><a href="../contact.html">Contact</a></li>
+          </ul>
+        </nav>
+        <div class="header-cta">
+          <a class="btn btn--primary btn--small" href="../cv.html">Download CV</a>
+        </div>
+      </div>
+    </header>
+
+    <main id="main">
+      <div class="wrap page-intro">
+        <p class="breadcrumb"><a href="yarn-petals-sales-reporting-workflow.html">&larr; Back to Yarn Petals project</a></p>
+        <h1>Yarn Petals Requirements Document</h1>
+        <p class="lede">Business problem, scope, requirements, business rules, and expected value.</p>
+      </div>
+
+      <article class="wrap section section--tight case-study">
+        <section>
+          <h2>1. Project Context</h2>
+          <p>
+            Yarn Petals is an e-commerce crochet flower brand that needed a structured sales reporting
+            solution during an ownership transition. The business had sales records across Shopify,
+            manual order files, and social media orders, but the files were inconsistent and difficult to
+            reconcile.
+          </p>
+          <p>
+            The project goal was to create a repeatable workflow that could clean, standardise, and map
+            order data into one universal reporting dataset, then use that dataset in Power BI.
+          </p>
+        </section>
+
+        <section>
+          <h2>2. Business Problem</h2>
+          <ul>
+            <li>Shopify exports were messy and not aligned with the structured reporting file.</li>
+            <li>Manual 2025 order data did not follow the same format as other datasets.</li>
+            <li>Instagram and Facebook orders lacked consistent order numbers.</li>
+            <li>Inconsistent categories created risk in sales, product, customer, and channel analysis.</li>
+            <li>The new owner needed a reliable reporting process that did not depend on manual fixes.</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>3. Project Objectives</h2>
+          <ol>
+            <li>Create a universal structured dataset format.</li>
+            <li>Develop an AI-assisted Python workflow to clean and map Shopify exports.</li>
+            <li>Standardise manual and social media orders.</li>
+            <li>Build an interactive Power BI dashboard.</li>
+            <li>Make the solution transferable and scalable for the owner.</li>
+          </ol>
+        </section>
+
+        <section>
+          <h2>4. Scope</h2>
+          <h3>In Scope</h3>
+          <ul>
+            <li>Analyse existing datasets and define a universal schema.</li>
+            <li>Clean and map Shopify raw exports into the structured format.</li>
+            <li>Standardise manual and social media orders.</li>
+            <li>Generate missing order numbers where required.</li>
+            <li>Build a Power BI dashboard with KPIs, filters, trends, and category breakdowns.</li>
+            <li>Apply Yarn Petals branding and owner-friendly dashboard layout.</li>
+          </ul>
+          <h3>Out of Scope</h3>
+          <ul>
+            <li>Shopify system restructuring.</li>
+            <li>ERP integration.</li>
+            <li>Real-time API integration.</li>
+            <li>Automated Instagram or Facebook order capture.</li>
+            <li>Financial accounting reconciliation.</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>5. Functional Requirements</h2>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>ID</th>
+                  <th>Requirement</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td>FR1</td><td>System must accept Shopify CSV export file as input.</td></tr>
+                <tr><td>FR2</td><td>Python workflow must clean and standardise Shopify data.</td></tr>
+                <tr><td>FR3</td><td>Columns must be mapped into the universal dataset format.</td></tr>
+                <tr><td>FR4</td><td>Unique order numbers must be generated for all orders.</td></tr>
+                <tr><td>FR5</td><td>Mandatory fields such as Date, Product Price, and Total must be validated.</td></tr>
+                <tr><td>FR6</td><td>Final output must be ready for Power BI reporting.</td></tr>
+                <tr><td>FR7</td><td>Manual order files must be transformable into the same universal structure.</td></tr>
+                <tr><td>FR8</td><td>Dashboard must calculate Net Sales.</td></tr>
+                <tr><td>FR9</td><td>Dashboard must calculate Sold Bundles / Orders Count.</td></tr>
+                <tr><td>FR10</td><td>Dashboard must support Product, Animal, Colour, Date, Occasion, and State filters.</td></tr>
+                <tr><td>FR11</td><td>Dashboard must show monthly sales trend.</td></tr>
+                <tr><td>FR12-FR15</td><td>Dashboard must show colour, animal, occasion, product, channel, and state breakdowns.</td></tr>
+                <tr><td>FR16</td><td>Dashboard must reflect Yarn Petals branding colours.</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <section>
+          <h2>6. Non-Functional Requirements</h2>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Category</th>
+                  <th>Requirement</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td>Performance</td><td>Process up to 10,000 rows within 30 seconds.</td></tr>
+                <tr><td>Usability</td><td>Staff should be able to run the workflow without coding knowledge.</td></tr>
+                <tr><td>Reliability</td><td>Mapping must produce a consistent output format.</td></tr>
+                <tr><td>Maintainability</td><td>Code and documentation must be understandable and editable.</td></tr>
+                <tr><td>Scalability</td><td>The dataset should allow future columns and categories.</td></tr>
+                <tr><td>Security</td><td>Customer email data must not be publicly exposed on visuals.</td></tr>
+                <tr><td>Compatibility</td><td>The dashboard must work in Power BI Desktop and cloud contexts.</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <section>
+          <h2>7. Business Rules</h2>
+          <p>
+            The project required explicit category mapping so the owner could rely on stable reporting
+            categories after handover.
+          </p>
+          <ul>
+            <li>Blank product, animal, and colour values are standardised to `NG`.</li>
+            <li>Special customised high-price bundles are mapped to `Largest Bundle`.</li>
+            <li>Bud Bundle style variants are consolidated into `Bud Bundle`.</li>
+            <li>Selected product names drive animal classification for Katsu-themed bundles.</li>
+            <li>Graduation and birthday accessories drive the Occasion field.</li>
+            <li>Selected gift bundle products can be mapped to couple-related occasions when no occasion is provided.</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>8. Expected Results</h2>
+          <ul>
+            <li>A single structured dataset as the reporting source of truth.</li>
+            <li>A repeatable cleaning and mapping process for Shopify and manual orders.</li>
+            <li>Reduced data mismatch and manual cleaning effort.</li>
+            <li>Improved reporting accuracy and decision-making confidence.</li>
+            <li>A professional Power BI dashboard ready for owner handover.</li>
+          </ul>
+        </section>
+      </article>
+    </main>
+
+    <footer class="site-footer">
+      <div class="wrap">
+        <p>&copy; <span id="y"></span> Minh Duc &middot; Portfolio</p>
+        <p><a href="../contact.html">Email &amp; LinkedIn</a></p>
+      </div>
+    </footer>
+    <script>
+      document.getElementById("y").textContent = new Date().getFullYear();
+    </script>
+    <script src="../js/main.js"></script>
+  </body>
+</html>
